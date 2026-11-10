@@ -1,0 +1,11 @@
+# local read-only reference: recreate with the command in my-factory/docs/ROADMAP.md
+reference/
+# hook logs, factory run data, Python
+logs/
+.factory/
+.venv/
+__pycache__/
+# IDE and OS
+.idea/
+*.iml
+.DS_Store
