@@ -16,7 +16,7 @@
 - 1.1.2.7.1 A box becomes a node of type concept: line 1 is its name, further lines are its definition.
 - 1.1.2.7.2 A box whose text ends with "?" becomes a node of type question, attached to the concept
   its arrow connects to; that arrow is not a relationship.
-- 1.1.2.7.3 An arrow between two concepts becomes a relationship; its label is the type.
+- 1.1.2.7.3 An arrow between two concepts becomes a relationship; its label, if any, is the type.
 
 ### 1.1.2.1 Flashcards
 - 1.1.2.1.1 One card per concept that has a definition.

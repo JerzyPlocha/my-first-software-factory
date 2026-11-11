@@ -4,15 +4,11 @@
 - Needs 1.1.2.3 and 1.1.2.4, and the parts of 1.1.2.2 and 1.1.2.5 beyond v0 (see needs.md)
 
 ## Input
-- Graph files written by hand (YAML)
 - Compressed draw.io files
-- Miro boards as input (Miro's exports leave out connectors; its API needs a token and network access)
-- Extracting concepts from text with AI, as readable input to correct before importing
+- Extracting concepts from text with AI, into a drawing the learner checks and corrects before importing
 - Tags on concepts
-- Questions as a field of a concept (v0 uses question nodes)
-- A question on a relationship, written as an arrow label ending with "?"
-- A fixed list of relationship types
-- Duplicate box names
+- Questions attached to a relationship (draw.io cannot connect an arrow to another arrow)
+- Two concepts with the same name
 - Rules for duplicate relationships, self-relationships and two-way relationship types
 - Renaming a concept while keeping its relationships
 - Delete behaviour for a concept that has relationships
@@ -27,4 +23,6 @@
 - Every question is attached to a concept (targeted questions)
 - Clusters, cards per concept, open questions per concept
 - GRINDE visual principles: grouped, emphasized, non-verbal
-- Learning-session metrics: cognitive friction, metacognitive monitoring, recall type, disconfirming queries
+- Learning-session metrics: cognitive state, seconds of struggle before looking up, engagement mode,
+  strategy checks per hour, precision of confusion, ratio of open questions to conclusions,
+  encoding mechanism, analogy depth, recall type, share of disconfirming queries

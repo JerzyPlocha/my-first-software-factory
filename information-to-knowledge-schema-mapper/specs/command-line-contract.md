@@ -1,13 +1,13 @@
 # Command-line contract (v0)
 
-Purpose: turn a concept graph drawn in draw.io into a stored concept graph, a flashcard deck,
-and answers to where the graph is not yet cohesive.
+Purpose: transform a drawing made in draw.io into the schema (stored as the concept graph),
+a flashcard deck, and answers to where the schema is not yet cohesive.
 
 ## import-concept-graph
     information-to-knowledge-schema-mapper import-concept-graph <drawing-file> --database-path <path>
 - Reads an uncompressed draw.io file, transforms it into the schema (transformation rules below)
   and stores it as the concept graph in the database at <path>.
-- If any arrow is not connected at both ends, nothing is stored.
+- If any arrow is not connected at both ends, the import fails and nothing is stored.
 
 ## generate-flashcard-deck
     information-to-knowledge-schema-mapper generate-flashcard-deck --database-path <path>
@@ -17,8 +17,9 @@ and answers to where the graph is not yet cohesive.
 
 ## answer-metric-questions
     information-to-knowledge-schema-mapper answer-metric-questions --database-path <path>
-- Answers each question in specs/application-metrics.md, one line per metric, in table order:
-  metric-id<TAB>yes, or metric-id<TAB>no<TAB>item; item; ...
+- Answers the questions defined in specs/application-metrics.md, one line per metric, in this order:
+  concepts-connected, relationships-named, questions-present.
+- Each line is metric-id<TAB>yes, or metric-id<TAB>no<TAB>item; item; ...
 - Items for concepts-connected: the concepts outside the largest connected group.
 - Items for relationships-named: the relationships without a type, as "{source} -> {target}".
 - Items may be in any order.

@@ -21,7 +21,7 @@ approved by the concept-reviewer subagent.
 Ask these, answered by running something, never from memory:
 1. Which milestone proof passes right now?
 2. Last 5 factory runs: pass rate, median time, tokens?
-3. Manual edits to the target app in the last run?
+3. Manual edits to the mapper in the last run?
 4. Failure in my code or in the model? (fake-agent tests green means the model)
 5. What is blocked, and for how many sessions?
 

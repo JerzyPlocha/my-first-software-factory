@@ -20,7 +20,7 @@ specs/features/, specs/needs.md, specs/command-line-contract.md, specs/applicati
 tests/acceptance/, tests/fixtures/
 
 ## Where you may write
-src/, tests/unit/, specs/plans/
+src/, tests/unit/, specs/plans/, pyproject.toml, uv.lock
 
 ## Technology
 Python, packaged with uv. Package name: information_to_knowledge_schema_mapper.

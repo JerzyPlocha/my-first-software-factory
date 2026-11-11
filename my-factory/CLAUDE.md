@@ -2,7 +2,7 @@
 
 ## Goal (draft)
 Given a spec Jurek writes as acceptance tests, my-factory produces an app that passes all of them,
-with zero manual edits, in at least 3 of 5 local runs, within a time and token budget,
+with zero manual edits, in at least 3 of 5 local runs, within a time and cost budget,
 with every step logged and no writes outside allowed paths.
 
 Milestones and status: docs/ROADMAP.md
