@@ -9,7 +9,7 @@
 - Miro boards as input (Miro's exports leave out connectors; its API needs a token and network access)
 - Extracting concepts from text with AI, as readable input to correct before importing
 - Tags on concepts
-- Questions as a field of a concept (v0 uses question boxes)
+- Questions as a field of a concept (v0 uses question nodes)
 - A question on a relationship, written as an arrow label ending with "?"
 - A fixed list of relationship types
 - Duplicate box names

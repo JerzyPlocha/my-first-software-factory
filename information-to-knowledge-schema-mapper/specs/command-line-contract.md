@@ -5,7 +5,8 @@ and answers to where the graph is not yet cohesive.
 
 ## import-concept-graph
     information-to-knowledge-schema-mapper import-concept-graph <drawing-file> --database-path <path>
-- Reads an uncompressed draw.io file (drawing rules below) and stores its concept graph in the database at <path>.
+- Reads an uncompressed draw.io file, transforms it into the schema (transformation rules below)
+  and stores it as the concept graph in the database at <path>.
 - If any arrow is not connected at both ends, nothing is stored.
 
 ## generate-flashcard-deck
@@ -26,8 +27,11 @@ and answers to where the graph is not yet cohesive.
 - Exit code 0 on success; 1 with a message on stderr on any error.
 - The database keeps the graph between runs.
 
-## Drawing rules
-1. A box is a concept: line 1 is its name; further lines, joined by spaces, are its definition.
-2. A box whose text ends with "?" is a question, not a concept. An arrow between it and a concept attaches it.
-3. An arrow from one concept to another is a relationship. Its label is the type and may be empty.
-4. Every arrow must be connected at both ends.
+## Transformation rules: drawing into schema
+The learner makes the drawing in draw.io, outside the app. import-concept-graph only transforms it,
+by these rules:
+1. A box is a node of the concept graph. Its node type is question if its text ends with "?", otherwise concept.
+2. A concept's line 1 is its name; further lines, joined by spaces, are its definition.
+3. An arrow between a question and a concept attaches the question to that concept.
+4. An arrow from one concept to another is a relationship. Its label is the type and may be empty.
+5. Every arrow must be connected at both ends.
