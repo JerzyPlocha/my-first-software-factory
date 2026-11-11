@@ -24,8 +24,8 @@ tests/acceptance/, tests/fixtures/
 src/, tests/unit/, specs/plans/, pyproject.toml, uv.lock
 
 ## Technology
-Python, packaged with uv. Package name: information_to_knowledge_schema_mapper.
-Storage: SQLite. No network access. No LLM calls.
+Python, packaged with uv.
+Storage: any local datastore at the --datastore-path the user gives. No network access. No LLM calls.
 
 ## Naming
 No abbreviations or acronyms. Descriptive verb plus object, two to three words.
