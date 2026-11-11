@@ -5,7 +5,7 @@
 It is NOT a database schema and NOT a JSON schema.
 
 ## Scope of v0
-Only two commands: import-concept-graph and generate-flashcard-deck.
+Only three commands: import-concept-graph, generate-flashcard-deck and answer-metric-questions.
 Out of scope: extracting concepts from text, AI features, user interface, export formats.
 Everything else is in specs/backlog.md. Do not implement backlog items.
 
@@ -14,7 +14,8 @@ All scenarios in specs/features/ pass through tests/acceptance/.
 The command-line interface follows specs/command-line-contract.md exactly.
 
 ## Protected paths (never edit)
-specs/features/, specs/needs.md, specs/command-line-contract.md, tests/acceptance/, tests/fixtures/
+specs/features/, specs/needs.md, specs/command-line-contract.md, specs/application-metrics.csv,
+tests/acceptance/, tests/fixtures/
 
 ## Where you may write
 src/, tests/unit/, specs/plans/
