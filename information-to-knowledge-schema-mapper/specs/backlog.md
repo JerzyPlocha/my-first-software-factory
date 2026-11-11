@@ -22,7 +22,7 @@
 - Byte-identical output for the same graph
 - Printing the intervention with each metric answer
 
-## Metrics (v0 metrics are in application-metrics.csv)
+## Metrics (v0 metrics are in application-metrics.md)
 - Every concept has a definition
 - Every question is attached to a concept (targeted questions)
 - Clusters, cards per concept, open questions per concept

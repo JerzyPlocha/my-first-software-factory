@@ -16,7 +16,7 @@ and answers to where the graph is not yet cohesive.
 
 ## answer-metric-questions
     information-to-knowledge-schema-mapper answer-metric-questions --database-path <path>
-- Answers each question in specs/application-metrics.csv, one line per metric, in file order:
+- Answers each question in specs/application-metrics.md, one line per metric, in table order:
   metric-id<TAB>yes, or metric-id<TAB>no<TAB>item; item; ...
 - Items for concepts-connected: the concepts outside the largest connected group.
 - Items for relationships-named: the relationships without a type, as "{source} -> {target}".

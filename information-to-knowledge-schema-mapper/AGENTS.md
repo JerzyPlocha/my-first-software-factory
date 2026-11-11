@@ -14,7 +14,7 @@ All scenarios in specs/features/ pass through tests/acceptance/.
 The command-line interface follows specs/command-line-contract.md exactly.
 
 ## Protected paths (never edit)
-specs/features/, specs/needs.md, specs/command-line-contract.md, specs/application-metrics.csv,
+specs/features/, specs/needs.md, specs/command-line-contract.md, specs/application-metrics.md,
 tests/acceptance/, tests/fixtures/
 
 ## Where you may write
