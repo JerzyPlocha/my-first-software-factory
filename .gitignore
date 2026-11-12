@@ -1,5 +1,7 @@
 # local read-only reference: recreate with the command in my-factory/docs/ROADMAP.md
 reference/
+# secrets: API keys live in .env files, never in git
+.env
 # hook logs, factory run data, Python
 logs/
 .factory/
