@@ -45,3 +45,5 @@ by these rules:
 3. An arrow between a question and a concept attaches the question to that concept.
 4. An arrow from one concept to another is a relationship. Its label is the type and may be empty.
 5. Every arrow must be connected at both ends.
+6. Only the first page of the drawing is read; further pages are free for notes.
+7. Text formatting such as bold is ignored; a line break counts as a new line.

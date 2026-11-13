@@ -1,0 +1,270 @@
+<mxfile host="app.diagrams.net" pages="2">
+  <diagram id="schema" name="Schema">
+    <mxGraphModel dx="5339" dy="3486" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="2400" pageHeight="1050" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="word_tokenization" parent="1" style="html=0;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;arcSize=6;" value="Word tokenization&#xa;Whole words: short sequences, but&#xa;a finite vocabulary misses&#xa;unfamiliar words." vertex="1">
+          <mxGeometry height="74" width="250" x="-200" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="subword_tokenization" parent="1" style="html=0;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;arcSize=6;" value="Sub-word tokenization&#xa;Reuses frequent pieces of words,&#xa;so a modest vocabulary covers&#xa;rare words; used by most LLMs." vertex="1">
+          <mxGeometry height="74" width="250" x="-20" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="byte_tokenization" parent="1" style="html=0;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;arcSize=6;" value="Byte tokenization&#xa;UTF-8 bytes: 256 values cover any&#xa;text, at the cost of longer&#xa;sequences." vertex="1">
+          <mxGeometry height="74" width="250" x="250" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="language_model" parent="1" style="html=0;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;shape=process;size=0.06;spacingLeft=22;strokeWidth=3;" value="Language model&#xa;A Transformer that turns token IDs&#xa;into token states and, for&#xa;generation, scores the next token." vertex="1">
+          <mxGeometry height="74" width="260" x="1010" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="attention" parent="1" style="html=0;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=1;arcSize=6;" value="Attention&#xa;Combines information from the&#xa;positions a token may see. A&#xa;causal mask shows only earlier&#xa;positions; BERT sees both sides." vertex="1">
+          <mxGeometry height="89" width="250" x="1360" y="-19" as="geometry" />
+        </mxCell>
+        <mxCell id="training" parent="1" style="html=0;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=1;arcSize=6;" value="Training&#xa;A loss measures prediction errors;&#xa;optimization updates the embedding&#xa;matrix and the other weights." vertex="1">
+          <mxGeometry height="74" width="250" x="1700" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tokenizer" parent="1" style="html=0;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;arcSize=6;strokeWidth=3;" value="Tokenizer&#xa;Splits text into tokens with its&#xa;own rules and maps each token to&#xa;an ID; a model needs the mapping&#xa;it was trained with. Models may&#xa;share a tokenizer." vertex="1">
+          <mxGeometry height="104" width="250" x="570" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="tokenization" parent="1" style="html=0;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;arcSize=6;" value="Tokenization&#xa;Splitting text into tokens, the&#xa;units a language model reads." vertex="1">
+          <mxGeometry height="59" width="250" x="-20" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="token" parent="1" style="html=0;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;arcSize=6;strokeWidth=3;" value="Token&#xa;One piece of text: a word, part&#xa;of a word or a byte." vertex="1">
+          <mxGeometry height="59" width="250" x="360" y="315" as="geometry" />
+        </mxCell>
+        <mxCell id="token_id" parent="1" style="html=0;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;arcSize=6;strokeWidth=3;" value="Token ID&#xa;A token&#39;s number in the&#xa;vocabulary. The order of IDs&#xa;matters; the numeric gap between&#xa;two IDs means nothing." vertex="1">
+          <mxGeometry height="89" width="250" x="700" y="374" as="geometry" />
+        </mxCell>
+        <mxCell id="embedding_matrix" parent="1" style="html=0;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;shape=cylinder3;boundedLbl=1;size=10;spacingTop=14;strokeWidth=3;" value="Embedding matrix&#xa;The model&#39;s table with one learned&#xa;row per vocabulary entry." vertex="1">
+          <mxGeometry height="104" width="250" x="1130" y="329" as="geometry" />
+        </mxCell>
+        <mxCell id="token_embedding" parent="1" style="html=0;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;rounded=1;arcSize=6;" value="Token embedding&#xa;The row an ID retrieves from the&#xa;embedding matrix; the same ID&#xa;always retrieves the same row." vertex="1">
+          <mxGeometry height="74" width="250" x="1450" y="315" as="geometry" />
+        </mxCell>
+        <mxCell id="contextualized_embedding" parent="1" style="html=0;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;rounded=1;arcSize=6;" value="Contextualized embedding&#xa;One vector per token occurrence,&#xa;after the layers have combined its&#xa;context and position." vertex="1">
+          <mxGeometry height="74" width="250" x="1830" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="next_token_probabilities" parent="1" style="html=0;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=1;arcSize=6;" value="Next-token probabilities&#xa;Scores for every possible next&#xa;token; generation picks one,&#xa;appends it and repeats." vertex="1">
+          <mxGeometry height="74" width="250" x="2020" y="154" as="geometry" />
+        </mxCell>
+        <mxCell id="input_text" parent="1" style="html=0;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fontSize=12;fillColor=#f5f5f5;strokeColor=#666666;shape=document;boundedLbl=1;size=0.2;" value="Input text&#xa;A sequence of characters." vertex="1">
+          <mxGeometry height="60" width="250" x="560" y="654" as="geometry" />
+        </mxCell>
+        <mxCell id="text_embedding" parent="1" style="html=0;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;rounded=1;arcSize=6;" value="Text embedding&#xa;One vector for a sentence or&#xa;passage, made by pooling token&#xa;states or selecting one of them." vertex="1">
+          <mxGeometry height="74" width="250" x="1740" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="bag_of_words" parent="1" style="html=0;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fontSize=12;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;arcSize=6;" value="Bag-of-words&#xa;Counts how often each vocabulary&#xa;entry appears in a text." vertex="1">
+          <mxGeometry height="59" width="250" x="800" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="bag_of_words_limitation" parent="1" style="html=0;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fontSize=12;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;arcSize=6;" value="Bag-of-words limitation&#xa;Loses word order and meaning:&#xa;&quot;Dogs chase cats&quot; and &quot;Cats chase&#xa;dogs&quot; get identical counts." vertex="1">
+          <mxGeometry height="74" width="250" x="1000" y="666" as="geometry" />
+        </mxCell>
+        <mxCell id="embedding" parent="1" style="html=0;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;rounded=1;arcSize=6;strokeWidth=3;" value="Embedding&#xa;A learned vector of numbers that&#xa;represents a token or a text;&#xa;which relationships it captures&#xa;depends on data and objective." vertex="1">
+          <mxGeometry height="89" width="250" x="1200" y="505" as="geometry" />
+        </mxCell>
+        <mxCell id="semantic_similarity" parent="1" style="html=0;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;rounded=1;arcSize=6;" value="Semantic similarity&#xa;Cosine similarity of two text&#xa;embeddings from the same model;&#xa;whether high means relevance,&#xa;paraphrase or topic overlap&#xa;depends on training." vertex="1">
+          <mxGeometry height="104" width="250" x="1520" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="question_subword" parent="1" style="rounded=1;html=0;fontSize=12;dashed=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Why do LLMs prefer sub-word tokens?" vertex="1">
+          <mxGeometry height="40" width="250" x="-60" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="question_swapped_ids" parent="1" style="rounded=1;html=0;fontSize=12;dashed=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="What breaks if a tokenizer swaps two IDs?" vertex="1">
+          <mxGeometry height="40" width="290" x="480" y="177" as="geometry" />
+        </mxCell>
+        <mxCell id="question_context" parent="1" style="rounded=1;html=0;fontSize=12;dashed=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="How does context change a token&#39;s embedding?" vertex="1">
+          <mxGeometry height="40" width="300" x="1425" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="question_word_order" parent="1" style="rounded=1;html=0;fontSize=12;dashed=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Can counts tell &quot;dogs chase cats&quot; from &quot;cats chase dogs&quot;?" vertex="1">
+          <mxGeometry height="40" width="390" x="860" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="relationship_1" edge="1" parent="1" source="word_tokenization" style="html=0;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;" target="tokenization" value="is-a">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="relationship_2" edge="1" parent="1" source="subword_tokenization" style="html=0;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;" target="tokenization" value="is-a">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="relationship_3" edge="1" parent="1" source="byte_tokenization" style="html=0;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;" target="tokenization" value="is-a">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="relationship_4" edge="1" parent="1" source="tokenizer" style="html=0;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;" target="tokenization" value="performs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="relationship_5" edge="1" parent="1" source="tokenization" style="html=0;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;" target="input_text" value="splits">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="relationship_6" edge="1" parent="1" source="tokenization" style="html=0;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;" target="token" value="produces">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="relationship_7" edge="1" parent="1" source="token" style="html=0;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;" target="token_id" value="maps-to">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="relationship_8" edge="1" parent="1" source="tokenizer" style="html=0;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;" target="vocabulary" value="has">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="relationship_9" edge="1" parent="1" source="vocabulary" style="html=0;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;" target="token" value="contains">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="relationship_10" edge="1" parent="1" source="input_text" style="html=0;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;" target="bag_of_words" value="counted-as">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="relationship_11" edge="1" parent="1" source="bag_of_words" style="html=0;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;" target="bag_of_words_limitation" value="has">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="relationship_12" edge="1" parent="1" source="embedding" style="html=0;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;" target="bag_of_words_limitation" value="solves">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="relationship_13" edge="1" parent="1" source="language_model" style="html=0;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;rounded=0;" target="tokenizer" value="uses">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="relationship_14" edge="1" parent="1" source="language_model" style="html=0;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;" target="token_id" value="reads">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="relationship_15" edge="1" parent="1" source="language_model" style="html=0;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;" target="embedding_matrix" value="contains">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="relationship_16" edge="1" parent="1" source="language_model" style="html=0;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;" target="attention" value="contains">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="relationship_17" edge="1" parent="1" source="token_id" style="html=0;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;" target="embedding_matrix" value="selects-row-in">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="relationship_18" edge="1" parent="1" source="embedding_matrix" style="html=0;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;" target="token_embedding" value="supplies">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="relationship_19" edge="1" parent="1" source="attention" style="html=0;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;" target="contextualized_embedding" value="produces">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="relationship_20" edge="1" parent="1" source="contextualized_embedding" style="html=0;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;" target="token_embedding" value="starts-from">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="relationship_21" edge="1" parent="1" source="contextualized_embedding" style="html=0;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;" target="next_token_probabilities" value="feeds">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="relationship_22" edge="1" parent="1" source="training" style="html=0;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;" target="next_token_probabilities" value="learns-from">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="relationship_23" edge="1" parent="1" source="training" style="html=0;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;rounded=0;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" target="embedding_matrix" value="updates">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="relationship_24" edge="1" parent="1" source="token_embedding" style="html=0;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;" target="embedding" value="is-a">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="relationship_25" edge="1" parent="1" source="contextualized_embedding" style="html=0;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;" target="embedding" value="is-a">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="relationship_26" edge="1" parent="1" source="contextualized_embedding" style="html=0;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;" target="text_embedding" value="pooled-into">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="relationship_27" edge="1" parent="1" source="text_embedding" style="html=0;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;" target="embedding" value="is-a">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="relationship_28" edge="1" parent="1" source="semantic_similarity" style="html=0;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;" target="text_embedding" value="compares">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="attach_question_subword" edge="1" parent="1" source="question_subword" style="html=0;endArrow=open;dashed=1;strokeColor=#b59a3a;" target="subword_tokenization" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="attach_question_swapped_ids" edge="1" parent="1" source="vocabulary" style="html=0;endArrow=open;dashed=1;strokeColor=#b59a3a;" target="token_id" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="attach_question_context" edge="1" parent="1" source="question_context" style="html=0;endArrow=open;dashed=1;strokeColor=#b59a3a;" target="token_embedding" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="attach_question_word_order" edge="1" parent="1" source="question_word_order" style="html=0;endArrow=open;dashed=1;strokeColor=#b59a3a;" target="bag_of_words_limitation" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dJUQpGSkEiqLZA5czqkq-1" edge="1" parent="1" source="question_swapped_ids" style="html=0;endArrow=open;dashed=1;strokeColor=#b59a3a;" target="vocabulary" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1064" y="70" as="sourcePoint" />
+            <mxPoint x="1048" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vocabulary" parent="1" style="html=0;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;arcSize=6;" value="Vocabulary&#xa;The fixed set of tokens a&#xa;tokenizer knows, each with an ID;&#xa;special IDs can mark boundaries&#xa;such as the end of a text." vertex="1">
+          <mxGeometry height="89" width="250" x="650" y="240" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="study-guide" name="Study guide">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="2050" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="guide_1" value="&lt;b&gt;Study guide: tokens and embeddings&lt;/b&gt;&lt;br&gt;Explanations for each stage of the schema on page 1, then activities to rebuild and challenge it." style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=12;arcSize=4;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="1180" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="guide_2" value="&lt;b&gt;Choose the units&lt;/b&gt;&lt;br&gt;Whole words give short sequences but a finite&lt;br&gt;vocabulary can miss unfamiliar words." style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=12;arcSize=4;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="20" y="110" width="380" height="73" as="geometry" />
+        </mxCell>
+        <mxCell id="guide_3" value="&lt;b&gt;Mechanism&lt;/b&gt;&lt;br&gt;Bytes cover UTF-8 text with 256 possible byte&lt;br&gt;values, often at the cost of longer sequences." style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=12;arcSize=4;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="20" y="197" width="380" height="73" as="geometry" />
+        </mxCell>
+        <mxCell id="guide_4" value="&lt;b&gt;Consequence&lt;/b&gt;&lt;br&gt;Subword vocabularies reuse frequent pieces.&lt;br&gt;Coverage depends on the tokenizer and its fallback." style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=12;arcSize=4;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="20" y="284" width="380" height="73" as="geometry" />
+        </mxCell>
+        <mxCell id="guide_5" value="&lt;b&gt;Preserve identity and order&lt;/b&gt;&lt;br&gt;Bag-of-words gives one count per vocabulary entry.&lt;br&gt;“Dogs chase cats” and “Cats chase dogs” can have&lt;br&gt;identical counts." style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=12;arcSize=4;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="420" y="110" width="380" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="guide_6" value="&lt;b&gt;Mechanism&lt;/b&gt;&lt;br&gt;A sequence of IDs retains order. Exchanging two IDs&lt;br&gt;changes the sequence. The numeric gap between IDs&lt;br&gt;has no inherent meaning." style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=12;arcSize=4;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="420" y="214" width="380" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="guide_7" value="&lt;b&gt;Consequence&lt;/b&gt;&lt;br&gt;A model needs the token-to-ID mapping it was&lt;br&gt;trained with. Special IDs can mark boundaries.&lt;br&gt;Models may share a tokenizer." style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=12;arcSize=4;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="420" y="318" width="380" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="guide_8" value="&lt;b&gt;Learn from other examples&lt;/b&gt;&lt;br&gt;In 2003 Bengio and colleagues jointly learned word&lt;br&gt;vectors and a predictor. Shared features let&lt;br&gt;related examples inform predictions." style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=12;arcSize=4;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="820" y="110" width="380" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="guide_9" value="&lt;b&gt;Mechanism&lt;/b&gt;&lt;br&gt;During training, a loss measures prediction error.&lt;br&gt;Optimization adjusts embedding coordinates and&lt;br&gt;other model parameters." style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=12;arcSize=4;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="820" y="214" width="380" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="guide_10" value="&lt;b&gt;Consequence&lt;/b&gt;&lt;br&gt;During inference, each ID retrieves its stored row.&lt;br&gt;Which relationships appear in vector space depends&lt;br&gt;on the data and objective." style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=12;arcSize=4;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="820" y="318" width="380" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="guide_11" value="&lt;b&gt;Choose the context&lt;/b&gt;&lt;br&gt;A single lookup vector cannot distinguish uses of&lt;br&gt;the same token. Surrounding tokens supply evidence&lt;br&gt;about each occurrence." style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=12;arcSize=4;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="110" width="380" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="guide_12" value="&lt;b&gt;Mechanism&lt;/b&gt;&lt;br&gt;A Transformer uses attention to combine information&lt;br&gt;from accessible positions. A causal mask allows&lt;br&gt;only the prefix at each position." style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=12;arcSize=4;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="214" width="380" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="guide_13" value="&lt;b&gt;Consequence&lt;/b&gt;&lt;br&gt;BERT (Devlin et al., 2019) uses context on both&lt;br&gt;sides. The model architecture determines which&lt;br&gt;clues can affect a token state." style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=12;arcSize=4;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="318" width="380" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="guide_14" value="&lt;b&gt;Choose what to compare&lt;/b&gt;&lt;br&gt;A passage has many token states. To retrieve&lt;br&gt;passages efficiently, represent each passage with a&lt;br&gt;single vector." style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=12;arcSize=4;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="1620" y="110" width="380" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="guide_15" value="&lt;b&gt;Mechanism&lt;/b&gt;&lt;br&gt;Pool states or select a designated state.&lt;br&gt;Similarity training can favor relevant&lt;br&gt;query–passage pairs over irrelevant pairs." style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=12;arcSize=4;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1620" y="214" width="380" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="guide_16" value="&lt;b&gt;Consequence&lt;/b&gt;&lt;br&gt;Cosine similarity compares vector directions.&lt;br&gt;Whether a high score means relevance, paraphrase,&lt;br&gt;or topic overlap depends on training." style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=12;arcSize=4;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1620" y="318" width="380" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="guide_17" value="Rebuild and challenge the map" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=12;arcSize=4;fillColor=#ffffff;strokeColor=#666666;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="452" width="1180" height="39" as="geometry" />
+        </mxCell>
+        <mxCell id="guide_18" value="Start with a blank page and the diagram closed. Reopen the overview only after you have drawn your own explanation." style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=12;arcSize=4;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="20" y="501" width="1180" height="39" as="geometry" />
+        </mxCell>
+        <mxCell id="guide_19" value="&lt;b&gt;Recall from scratch&lt;/b&gt;&lt;br&gt;Draw how text becomes useful to a model. Include a branch for generation&lt;br&gt;and a branch for retrieval. Give each arrow a verb." style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=12;arcSize=4;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="20" y="554" width="380" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="guide_20" value="&lt;b&gt;Locate one uncertainty&lt;/b&gt;&lt;br&gt;Circle the first arrow you could not explain. Write three questions about&lt;br&gt;its input, its operation and what could make your explanation fail." style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=12;arcSize=4;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="420" y="554" width="380" height="107" as="geometry" />
+        </mxCell>
+        <mxCell id="guide_21" value="&lt;b&gt;Predict before checking&lt;/b&gt;&lt;br&gt;If two vocabulary IDs are swapped only in the tokenizer, what changes?&lt;br&gt;What other rows or output mappings would need to move to preserve&lt;br&gt;behavior?" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=12;arcSize=4;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="820" y="554" width="380" height="124" as="geometry" />
+        </mxCell>
+        <mxCell id="guide_22" value="&lt;b&gt;Try to break a claim&lt;/b&gt;&lt;br&gt;Find two texts with the same word counts and different meanings. Which&lt;br&gt;representation loses the distinction? Where could it be recovered?" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=12;arcSize=4;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="20" y="692" width="380" height="107" as="geometry" />
+        </mxCell>
+        <mxCell id="guide_23" value="&lt;b&gt;Explain by analogy&lt;/b&gt;&lt;br&gt;Invent an analogy for the embedding lookup. Name two ways it breaks down&lt;br&gt;when explaining learning or contextualization." style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=12;arcSize=4;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="420" y="692" width="380" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="guide_24" value="&lt;b&gt;Review your strategy&lt;/b&gt;&lt;br&gt;Use the CSV’s 30–120 second struggle target on one missing link. At the&lt;br&gt;15-minute check, mark what you recalled, what you guessed and which arrow&lt;br&gt;to revisit." style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=12;arcSize=4;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="820" y="692" width="380" height="124" as="geometry" />
+        </mxCell>
+        <mxCell id="guide_25" value="Check against the overview. Redraw one corrected relationship from memory and explain what observation would change your answer." style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=12;arcSize=4;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="20" y="830" width="1180" height="39" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
